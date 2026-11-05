@@ -1,51 +1,22 @@
-# Ironwood Ingest
+# Ironwood Toolkit
 
-High-throughput streaming ingestion for the Ironwood lakehouse.
+Public source for the Ironwood Data open-source tools. Every tool lives in its
+own top-level directory and is maintained independently by its owning team.
 
-## Overview
+| Directory | Tool | Purpose |
+| --- | --- | --- |
+| `ironwood-ingest/` | Ironwood Ingest | High-throughput streaming ingestion for the Ironwood lakehouse. |
+| `ironwood-schema/` | Ironwood Schema | Versioned schema registry and compatibility tooling for Ironwood tables. |
+| `ironwood-metrics/` | Ironwood Metrics | Lightweight metrics collection and rollups for Ironwood pipelines. |
+| `ironwood-synth/` | Ironwood Synth | Controllable synthetic benchmark generation for lakehouse pipelines. |
 
-This repository contains the public, finished source for Ironwood Ingest. It is the
-release that powers our managed offering and it is supported on a best-effort
-basis by the Ironwood Data open-source team.
+## Layout
 
-## Key Features
-
-- **Exactly-once delivery**: Append-only event streams land once, even across retries.
-- **Schema-on-write**: Typed landing zones keep downstream consumers honest.
-- **Back-pressure aware**: The writer adapts to lakehouse commit latency.
-
-## Repository Structure
-
-```
-├── src/
-│   ├── core.py
-│   ├── cli.py
-│   └── io_utils.py
-├── docs/
-│   ├── index.md
-│   └── usage.md
-├── examples/
-│   └── quickstart.py
-├── tests/
-│   └── test_core.py
-├── requirements.txt
-└── .gitignore
-```
-
-## Quick Start
-
-```bash
-git clone https://github.com/ironwood-data/ironwood-ingest.git
-cd ironwood-ingest
-pip install -r requirements.txt
-python examples/quickstart.py
-```
-
-## Contributing
-
-Issues and pull requests are welcome. Please run the unit tests before opening a
-pull request.
+Each tool directory follows the same internal layout (``src/``, ``docs/``,
+``examples/``, ``tests/``) so that build, release and packaging scripts can
+treat every component uniformly.
 
 ## License
 
-Released under the Apache-2.0 License.
+Unless a tool directory states otherwise, everything here is released under the
+Apache-2.0 License.

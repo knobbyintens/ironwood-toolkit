@@ -1,0 +1,51 @@
+# Ironwood Metrics
+
+Lightweight metrics collection and rollups for Ironwood pipelines.
+
+## Overview
+
+This directory contains the public, finished source for Ironwood Metrics. It is the
+release that powers our managed offering and it is supported on a best-effort
+basis by the Ironwood Data open-source team.
+
+## Key Features
+
+- **Low-overhead probes**: Instrumentation stays under one percent overhead.
+- **Pre-aggregated rollups**: Per-minute rollups are compact and query-friendly.
+- **OpenTelemetry export**: Existing dashboards keep working unchanged.
+
+## Directory Structure
+
+```
+├── src/
+│   ├── core.py
+│   ├── cli.py
+│   └── io_utils.py
+├── docs/
+│   ├── index.md
+│   └── usage.md
+├── examples/
+│   └── quickstart.py
+├── tests/
+│   └── test_core.py
+├── requirements.txt
+└── .gitignore
+```
+
+## Quick Start
+
+```bash
+git clone https://github.com/ironwood-data/ironwood-toolkit.git
+cd ironwood-toolkit/ironwood-metrics
+pip install -r requirements.txt
+python examples/quickstart.py
+```
+
+## Contributing
+
+Issues and pull requests are welcome. Please run the unit tests before opening a
+pull request.
+
+## License
+
+Released under the Apache-2.0 License.
